@@ -6,9 +6,7 @@ import {
   Routes
 } from "react-router-dom";
 
-import "./assets/fonts/titles.ttf";
-import "./assets/fonts/Pixelated.woff";
-import "./assets/fonts/Pixelated.woff2";
+import "./assets/fonts/font.ttf";
 
 import App from "./App";
 import Privacy from "./Privacy";

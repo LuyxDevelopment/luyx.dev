@@ -16,9 +16,10 @@ import macedonga from "./assets/images/macedonga.png";
 function App() {
   const [Played, setPlayed] = useState(false);
   const AlertInfo = {
-    show: false,
+    show: true,
     smallText: "Info",
-    text: "Alert text goes here...",
+    text: "CountBot is now available for Beta access. Click here to apply.",
+    url: "https://count.bot/beta"
   };
 
   const playSoundStart = () => {
@@ -83,14 +84,21 @@ function App() {
         <img alt="Bremea development small" src={Cube} className="mx-auto h-64 block lg:hidden" />
 
         {
-          AlertInfo.show && <div className="max-w-lg mx-auto lg:mt-0 mt-8">
-            <div className="text-xl rounded-xl border-2 border-transparent relative mx-4">
-              <div className={`absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed animate-pulse-fast`}></div>
+          AlertInfo.show && <div className="max-w-4xl mx-auto lg:mt-0 mt-8">
+            <div
+              className={"rounded-xl border-2 border-transparent relative mx-4" + (AlertInfo.url && " cursor-pointer")}
+              onClick={() => {
+                if(AlertInfo.url) window.location.href = AlertInfo.url;
+              }}
+            >
+              <div className={"absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all " + (AlertInfo.url ? "hover:animate-stop animate-pulse-fast" : "animate-pulse-fast")}></div>
               <div className="p-3">
-                <span className={`p-1 bg-green-600 rounded-lg mr-3 uppercase`}>
+                <span className="p-1 text-xl bg-green-600 rounded-lg mr-3 uppercase">
                   {AlertInfo.smallText}
                 </span>
-                {AlertInfo.text}
+                <span className="text-center text-2xl w-full">
+                  {AlertInfo.text}
+                </span>
               </div>
             </div>
           </div>
@@ -127,7 +135,7 @@ function App() {
           Team.map(t => {
             return (
               <div className="p-4 bg-gray-900 shadow-lg ring-1 ring-gray-200/30 rounded-md flex">
-                <img alt={t.name} src={t.image} className="rounded-md w-24 mr-8 bg-gray-800" />
+                <img alt={t.name} src={t.image} className="rounded-md w-24 mr-4 bg-gray-800" />
                 <div className="w-full">
                   <p className="text-3xl text-ellipsis title">{t.name}</p>
                   <p className="text-xl text-ellipsis">{t.role}</p>
