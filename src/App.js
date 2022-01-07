@@ -15,6 +15,11 @@ import macedonga from "./assets/images/macedonga.png";
 
 function App() {
   const [Played, setPlayed] = useState(false);
+  const AlertInfo = {
+    show: false,
+    smallText: "Info",
+    text: "Alert text goes here...",
+  };
 
   const playSoundStart = () => {
     if (Played) return;
@@ -76,6 +81,20 @@ function App() {
       <div>
         <img alt="Bremea development logo" src={Logo} className="mx-auto h-64 lg:block hidden" />
         <img alt="Bremea development small" src={Cube} className="mx-auto h-64 block lg:hidden" />
+
+        {
+          AlertInfo.show && <div className="max-w-lg mx-auto lg:mt-0 mt-8">
+            <div className="text-xl rounded-xl border-2 border-transparent relative mx-4">
+              <div className={`absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed animate-pulse-fast`}></div>
+              <div className="p-3">
+                <span className={`p-1 bg-green-600 rounded-lg mr-3 uppercase`}>
+                  {AlertInfo.smallText}
+                </span>
+                {AlertInfo.text}
+              </div>
+            </div>
+          </div>
+        }
       </div>
     </div>
 
