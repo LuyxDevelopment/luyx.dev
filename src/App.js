@@ -88,15 +88,15 @@ function App() {
             <div
               className={"rounded-xl border-2 border-transparent relative mx-4" + (AlertInfo.url && " cursor-pointer")}
               onClick={() => {
-                if(AlertInfo.url) window.location.href = AlertInfo.url;
+                if (AlertInfo.url) window.location.href = AlertInfo.url;
               }}
             >
               <div className={"absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all " + (AlertInfo.url ? "hover:animate-stop animate-pulse-fast" : "animate-pulse-fast")}></div>
-              <div className="p-3">
+              <div className="p-3 text-center">
                 <span className="p-1 text-xl bg-green-600 rounded-lg mr-3 uppercase">
                   {AlertInfo.smallText}
                 </span>
-                <span className="text-center text-2xl w-full">
+                <span className="text-2xl">
                   {AlertInfo.text}
                 </span>
               </div>
