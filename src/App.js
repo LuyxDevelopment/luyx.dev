@@ -93,10 +93,10 @@ function App() {
 						>
 							<div className={"absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all " + (AlertInfo.url ? "hover:animate-stop animate-pulse-fast" : "animate-pulse-fast")}></div>
 							<div className="p-3 text-center">
-								<span className="p-1 text-xl bg-green-600 rounded-lg mr-3 uppercase">
+								<span className="p-1 text-sm bg-green-600 rounded-lg mr-3 uppercase">
 									{AlertInfo.smallText}
 								</span>
-								<span className="text-2xl">
+								<span className="text-base">
 									{AlertInfo.text}
 								</span>
 							</div>
@@ -107,8 +107,8 @@ function App() {
 		</div>
 
 		<div id="content" className="bg-gradient-to-b from-black to-gray-900 p-8">
-			<h1 className="text-center text-5xl title">Our projects</h1>
-			<h2 className="max-w-4xl text-3xl mt-2 mx-auto text-center">
+			<h1 className="text-center text-3xl title">Our projects</h1>
+			<h2 className="max-w-4xl text-xl mt-2 mx-auto text-center">
 				These are the projects that we're currently working on.
 			</h2>
 			<div className="max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8">
@@ -126,8 +126,8 @@ function App() {
 					<img alt="Tree farmer logo" src={TreeFarmerLogo} className="h-16 mx-auto" />
 				</a>
 			</div>
-			<h1 className="text-center text-5xl title mt-8">Our team</h1>
-			<h2 className="max-w-4xl text-3xl mt-2 mx-auto text-center">
+      <h1 className="text-center text-3xl title mt-8">Our team</h1>
+			<h2 className="max-w-4xl text-xl mt-2 mx-auto text-center">
 				These are the people who make Luyx Development possible.
 			</h2>
 			<div className="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8">
@@ -137,8 +137,8 @@ function App() {
 							<div className="p-4 bg-gray-900 shadow-lg ring-1 ring-gray-200/30 rounded-md flex">
 								<img alt={t.name} src={t.image} className="rounded-md w-24 mr-4 bg-gray-800" />
 								<div className="w-full">
-									<p className="text-3xl text-ellipsis title">{t.name}</p>
-									<p className="text-xl text-ellipsis">{t.role}</p>
+									<p className="text-xl text-ellipsis title">{t.name}</p>
+									<p className="text-sm text-ellipsis">{t.role}</p>
 								</div>
 							</div>
 						);
@@ -153,45 +153,45 @@ function App() {
 
 				<div className="lg:mt-0 mt-8 lg:gap-y-0 gap-y-8 lg:ml-16 grid lg:grid-cols-3 gap-x-16 lg:text-left text-center">
 					<div>
-						<h3 className="text-2xl title">Projects</h3>
+						<h3 className="text-xl title">Projects</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="https://count.bot"
-								className="decoration-transparent decoration-2 text-xl hover:decoration-orange-500 transition-all duration-300 hover:underline"
+                className="decoration-transparent decoration-2 text-sm hover:decoration-orange-500 transition-all duration-300 hover:underline"
 							>
 								Countbot
 							</a>
 							<a
 								href="https://treefarmer.xyz"
-								className="decoration-transparent decoration-2 text-xl hover:decoration-green-500 transition-all duration-300 hover:underline"
+                className="decoration-transparent decoration-2 text-sm hover:decoration-green-500 transition-all duration-300 hover:underline"
 							>
 								Tree Farmer
 							</a>
 						</div>
 					</div>
 					<div>
-						<h3 className="text-2xl title">Legal</h3>
+            <h3 className="text-xl title">Legal</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="/privacy"
-								className="decoration-transparent decoration-2 text-xl hover:decoration-red-500 transition-all duration-300 hover:underline"
+                className="decoration-transparent decoration-2 text-sm hover:decoration-red-500 transition-all duration-300 hover:underline"
 							>
 								Privacy policy
 							</a>
 							<a
 								href="/terms"
-								className="decoration-transparent decoration-2 text-xl hover:decoration-red-500 transition-all duration-300 hover:underline"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-red-500 transition-all duration-300 hover:underline"
 							>
 								Terms of use
 							</a>
 						</div>
 					</div>
 					<div>
-						<h3 className="text-2xl title">Socials</h3>
+            <h3 className="text-xl title">Socials</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="https://discord.com/invite/jRUWbXhCYN"
-								className="decoration-transparent decoration-2 text-xl hover:decoration-blue-500 transition-all duration-300 hover:underline"
+                className="decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline"
 							>
 								Discord
 							</a>
