@@ -160,7 +160,7 @@ function App() {
 				</h2>
 				<div className="grid mt-8">
 					<a
-						href="https://something.host"
+						href="https://something.host/en?fpr=fyrlex"
 						style={{ background: "#6a54dd" }}
 						className="flex p-4 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 bg-black"
 					>
