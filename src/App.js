@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Logo from "./assets/images/logo.svg";
 import CountBotLogo from "./assets/images/countbot.svg";
+import SomethingHostLogo from "./assets/images/somethinghost.svg";
 import TreeFarmerLogo from "./assets/images/tree-farmer.svg";
 import Cube from "./assets/images/cube.svg";
 import CubeWhite from "./assets/images/cube-white.svg";
@@ -25,7 +26,7 @@ function App() {
 	const playSoundStart = () => {
 		if (Played) return;
 
-		const audio = new Audio("/audio/start.ogg");
+		const audio = document.getElementById("startAudio");
 		audio.play();
 		setPlayed(true);
 	}
@@ -78,6 +79,8 @@ function App() {
 			</div>
 		</div>
 
+		<audio src="/audio/start.ogg" hidden={true} autoPlay={false} id="startAudio" />
+
 		<div className="bg-black h-screen w-screen grid items-center">
 			<div>
 				<img alt="Luyx Development Logo" src={Logo} className="mx-auto h-64 lg:block hidden" />
@@ -126,7 +129,8 @@ function App() {
 					<img alt="Tree farmer logo" src={TreeFarmerLogo} className="h-16 mx-auto" />
 				</a>
 			</div>
-      <h1 className="text-center text-3xl title mt-8">Our team</h1>
+
+			<h1 className="text-center text-3xl title mt-8">Our team</h1>
 			<h2 className="max-w-4xl text-xl mt-2 mx-auto text-center">
 				These are the people who make Luyx Development possible.
 			</h2>
@@ -145,36 +149,69 @@ function App() {
 					})
 				}
 			</div>
+
+			<h1 className="text-center text-3xl title mt-8">Our sponsor host</h1>
+			<h2 className="max-w-4xl text-xl mt-2 mx-auto text-center">
+				We use Something.Host to host all our projects.
+			</h2>
+			<div className="max-w-4xl mx-auto">
+				<h2 className="text-center mt-2 mx-auto">
+					Something.Host provides you blazing fast hosting, with an easy to use platform to manage all your services.
+				</h2>
+				<div className="grid mt-8">
+					<a
+						href="https://something.host"
+						style={{ background: "#6a54dd" }}
+						className="flex p-4 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 bg-black"
+					>
+						<div className="mx-auto flex">
+							<img alt="Something.host logo" src={SomethingHostLogo} className="h-8 my-auto" />
+							<p className="ml-4 my-auto">Check out Something.Host</p>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 
 		<footer className="w-screen bg-gradient-to-b to-black from-gray-900">
 			<div className="max-w-4xl mx-auto pt-16 lg:pt-32 pb-16 lg:flex">
 				<img alt="White cube logo" src={CubeWhite} className="w-24 lg:mx-0 mx-auto" />
 
-				<div className="lg:mt-0 mt-8 lg:gap-y-0 gap-y-8 lg:ml-16 grid lg:grid-cols-3 gap-x-16 lg:text-left text-center">
+				<div className="lg:mt-0 mt-8 lg:gap-y-0 gap-y-8 lg:ml-16 grid lg:grid-cols-4 gap-x-16 lg:text-left text-center">
 					<div>
 						<h3 className="text-xl title">Projects</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="https://count.bot"
-                className="decoration-transparent decoration-2 text-sm hover:decoration-orange-500 transition-all duration-300 hover:underline"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-orange-500 transition-all duration-300 hover:underline"
 							>
 								Countbot
 							</a>
 							<a
 								href="https://treefarmer.xyz"
-                className="decoration-transparent decoration-2 text-sm hover:decoration-green-500 transition-all duration-300 hover:underline"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-green-500 transition-all duration-300 hover:underline"
 							>
 								Tree Farmer
 							</a>
 						</div>
 					</div>
 					<div>
-            <h3 className="text-xl title">Legal</h3>
+						<h3 className="text-xl title">Sponsors</h3>
+						<div className="grid gap-y-1">
+							<a
+								href="https://something.host"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-indigo-500 transition-all duration-300 hover:underline"
+							>
+								Something.Host
+							</a>
+						</div>
+					</div>
+					<div>
+						<h3 className="text-xl title">Legal</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="/privacy"
-                className="decoration-transparent decoration-2 text-sm hover:decoration-red-500 transition-all duration-300 hover:underline"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-red-500 transition-all duration-300 hover:underline"
 							>
 								Privacy policy
 							</a>
@@ -187,11 +224,11 @@ function App() {
 						</div>
 					</div>
 					<div>
-            <h3 className="text-xl title">Socials</h3>
+						<h3 className="text-xl title">Socials</h3>
 						<div className="grid gap-y-1">
 							<a
 								href="https://discord.com/invite/jRUWbXhCYN"
-                className="decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline"
+								className="decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline"
 							>
 								Discord
 							</a>
