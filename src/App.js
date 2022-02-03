@@ -199,7 +199,7 @@ function App() {
 						<h3 className="text-xl title">Sponsors</h3>
 						<div className="grid gap-y-1">
 							<a
-								href="https://something.host"
+								href="https://something.host/en?fpr=fyrlex"
 								className="decoration-transparent decoration-2 text-sm hover:decoration-indigo-500 transition-all duration-300 hover:underline"
 							>
 								Something.Host
