@@ -193,6 +193,12 @@ function App() {
 							>
 								Tree Farmer
 							</a>
+							<a
+								href='https://2048bot.com'
+								className="decoration-transparent decoration-2 text-sm hover:decoration-yellow-500 transition-all duration-300 hover:underline"
+							>
+								2048 Bot
+							</a>
 						</div>
 					</div>
 					<div>
@@ -231,6 +237,12 @@ function App() {
 								className="decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline"
 							>
 								Discord
+							</a>
+							<a
+								href='https://github.com/LuyxDevelopment'
+								className='decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline'
+							>
+								GitHub
 							</a>
 						</div>
 					</div>
