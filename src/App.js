@@ -185,7 +185,7 @@ function App() {
 								href="https://count.bot"
 								className="decoration-transparent decoration-2 text-sm hover:decoration-orange-500 transition-all duration-300 hover:underline"
 							>
-								Countbot
+								CountBot
 							</a>
 							<a
 								href="https://treefarmer.xyz"
