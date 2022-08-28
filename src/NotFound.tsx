@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import Cube from './assets/images/cube.svg';
 
 function NotFound(): JSX.Element {

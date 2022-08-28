@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { useState } from 'react';
 
 import Logo from './assets/images/logo.svg';
