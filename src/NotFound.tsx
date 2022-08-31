@@ -1,6 +1,7 @@
-import Cube from "./assets/images/cube.svg";
+/* eslint-disable linebreak-style */
+import Cube from './assets/images/cube.svg';
 
-function NotFound() {
+function NotFound(): JSX.Element {
 	return (<>
 		<div id="content" className="h-screen w-screen grid items-center">
 			<div>

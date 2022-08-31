@@ -1,4 +1,5 @@
-function Privacy() {
+/* eslint-disable linebreak-style */
+function Privacy(): JSX.Element {
 	return (<>
 		<div id="content" className="p-8">
 			<h1 className="text-center text-5xl title">Terms of use</h1>

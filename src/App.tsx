@@ -1,68 +1,26 @@
-import { useState } from "react";
+/* eslint-disable linebreak-style */
+import { useState } from 'react';
 
-import Logo from "./assets/images/logo.svg";
-import CountBotLogo from "./assets/images/countbot.svg";
-import SomethingHostLogo from "./assets/images/somethinghost.svg";
-import TreeFarmerLogo from "./assets/images/tree-farmer.svg";
-import Cube from "./assets/images/cube.svg";
-import CubeWhite from "./assets/images/cube-white.svg";
+import Logo from './assets/images/logo.svg';
+import CountBotLogo from './assets/images/countbot.svg';
+import SomethingHostLogo from './assets/images/somethinghost.svg';
+import TreeFarmerLogo from './assets/images/tree-farmer.svg';
+import Cube from './assets/images/cube.svg';
+import CubeWhite from './assets/images/cube-white.svg';
 
-import Fyrlex from "./assets/images/fyrlex.png";
-import FTP from "./assets/images/53P.gif";
-import NonStop from "./assets/images/NonStop.png";
-import Pom from "./assets/images/Pom.png";
-import Decc00n from "./assets/images/decc00n.png";
-import macedonga from "./assets/images/macedonga.png";
+import { AlertInfo, team } from './assets/util';
 
-function App() {
+function App(): JSX.Element {
 	const [Played, setPlayed] = useState(false);
-	const AlertInfo = {
-		show: true,
-		smallText: "Info",
-		text: "CountBot is now available for Beta access. Click here to apply.",
-		url: "https://count.bot/beta"
-	};
 
-	const playSoundStart = () => {
+
+	const playSoundStart = (): void => {
 		if (Played) return;
 
-		const audio = document.getElementById("startAudio");
+		const audio = document.getElementById('startAudio') as HTMLAudioElement;
 		audio.play();
 		setPlayed(true);
-	}
-
-	const Team = [
-		{
-			image: Fyrlex,
-			name: "Fyrlex",
-			role: "Team lead"
-		},
-		{
-			image: FTP,
-			name: "53P",
-			role: "Team lead"
-		},
-		{
-			image: NonStop,
-			name: "NonStop",
-			role: "Team lead"
-		},
-		{
-			image: Pom,
-			name: "Pom",
-			role: "Contributor"
-		},
-		{
-			image: Decc00n,
-			name: "decc00n",
-			role: "Contributor"
-		},
-		{
-			image: macedonga,
-			name: "Marco",
-			role: "Contributor"
-		}
-	];
+	};
 
 	return (<>
 		<div className="absolute bottom-0 w-screen rounded-xl overflow-auto p-8">
@@ -89,12 +47,12 @@ function App() {
 				{
 					AlertInfo.show && <div className="max-w-4xl mx-auto lg:mt-0 mt-8">
 						<div
-							className={"rounded-xl border-2 border-transparent relative mx-4" + (AlertInfo.url && " cursor-pointer")}
-							onClick={() => {
+							className={'rounded-xl border-2 border-transparent relative mx-4' + (AlertInfo.url && ' cursor-pointer')}
+							onClick={(): void => {
 								if (AlertInfo.url) window.location.href = AlertInfo.url;
 							}}
 						>
-							<div className={"absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all " + (AlertInfo.url ? "hover:animate-stop animate-pulse-fast" : "animate-pulse-fast")}></div>
+							<div className={'absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all ' + (AlertInfo.url ? 'hover:animate-stop animate-pulse-fast' : 'animate-pulse-fast')}></div>
 							<div className="p-3 text-center">
 								<span className="p-1 text-sm bg-green-600 rounded-lg mr-3 uppercase">
 									{AlertInfo.smallText}
@@ -123,7 +81,7 @@ function App() {
 				</a>
 				<a
 					href="https://treefarmer.xyz"
-					style={{ background: "#236f21" }}
+					style={{ background: '#236f21' }}
 					className="p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-green-500 hover:shadow-lg hover:shadow-green-500/40 bg-black"
 				>
 					<img alt="Tree farmer logo" src={TreeFarmerLogo} className="h-16 mx-auto" />
@@ -136,7 +94,7 @@ function App() {
 			</h2>
 			<div className="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8">
 				{
-					Team.map(t => {
+					team.map(t => {
 						return (
 							<div className="p-4 bg-gray-900 shadow-lg ring-1 ring-gray-200/30 rounded-md flex">
 								<img alt={t.name} src={t.image} className="rounded-md w-24 mr-4 bg-gray-800" />
@@ -161,7 +119,7 @@ function App() {
 				<div className="grid mt-8">
 					<a
 						href="https://something.host/en?fpr=fyrlex"
-						style={{ background: "#6a54dd" }}
+						style={{ background: '#6a54dd' }}
 						className="flex p-4 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 bg-black"
 					>
 						<div className="mx-auto flex">
