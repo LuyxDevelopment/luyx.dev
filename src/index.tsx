@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import { render } from 'react-dom';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -14,8 +14,8 @@ import Terms from './pages/Terms';
 import NotFound from './pages/NotFound';
 import './index.css';
 
-ReactDOM.render(
-	<React.StrictMode>
+render(
+	<StrictMode>
 		<Router>
 			<Routes>
 				<Route path="/" element={<App />} />
@@ -24,6 +24,6 @@ ReactDOM.render(
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</Router>
-	</React.StrictMode>,
+	</StrictMode>,
 	document.getElementById('root'),
 );
