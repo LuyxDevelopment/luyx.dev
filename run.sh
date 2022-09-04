@@ -1,3 +1,4 @@
 cd /home/luyx/luyxsite
 npm i
-npm run start
+npm run build
+npx serve build/
