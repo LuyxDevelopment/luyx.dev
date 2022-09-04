@@ -18,10 +18,10 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Router>
 			<Routes>
-				<Route path="*" element={<NotFound />} />
+				<Route path="/" element={<App />} />
 				<Route path="/terms" element={<Terms />} />
 				<Route path="/privacy" element={<Privacy />} />
-				<Route path="/" element={<App />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</Router>
 	</React.StrictMode>,
