@@ -17,14 +17,6 @@
 	],
 	"settings": {},
 	"rules": {
-		"@typescript-eslint/ban-types": [
-			"error",
-			{
-				"types": {
-					"Object": "Use {} instead"
-				}
-			}
-		],
 		"@typescript-eslint/explicit-function-return-type": "warn",
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/no-unused-vars": [
@@ -66,22 +58,44 @@
 		],
 		"comma-dangle": [
 			"warn",
-			"always-multiline"
+			"only-multiline"
 		],
 		"@typescript-eslint/ban-ts-comment": "off",
 		"@typescript-eslint/indent": [
 			"error",
 			"tab"
 		],
-		"linebreak-style": [
-			"error",
-			"windows"
-		],
 		"quotes": [
 			"warn",
 			"single"
 		],
-		"semi": "off",
-		"@typescript-eslint/semi": "warn"
+		"semi": [
+			"warn",
+			"always"
+		],
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "default",
+				"format": null,
+				"leadingUnderscore": "forbid"
+			},
+			{
+				"selector": "property",
+				"modifiers": [
+					"private"
+				],
+				"format": null,
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "property",
+				"modifiers": [
+					"protected"
+				],
+				"format": null,
+				"leadingUnderscore": "allow"
+			}
+		]
 	}
 }

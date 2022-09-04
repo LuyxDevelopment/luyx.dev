@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 function Privacy(): JSX.Element {
 	return (<>
 		<div id="content" className="p-8">

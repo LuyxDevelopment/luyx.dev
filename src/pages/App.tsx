@@ -1,14 +1,13 @@
-/* eslint-disable linebreak-style */
 import { useState } from 'react';
 
-import Logo from './assets/images/logo.svg';
-import CountBotLogo from './assets/images/countbot.svg';
-import SomethingHostLogo from './assets/images/somethinghost.svg';
-import TreeFarmerLogo from './assets/images/tree-farmer.svg';
-import Cube from './assets/images/cube.svg';
-import CubeWhite from './assets/images/cube-white.svg';
+import Logo from '../assets/images/logo.svg';
+import CountBotLogo from '../assets/images/countbot.svg';
+import SomethingHostLogo from '../assets/images/somethinghost.svg';
+import TreeFarmerLogo from '../assets/images/tree-farmer.svg';
+import Cube from '../assets/images/cube.svg';
+import CubeWhite from '../assets/images/cube-white.svg';
 
-import { AlertInfo, team } from './assets/util';
+import { AlertInfo, team } from '../assets/util';
 
 function App(): JSX.Element {
 	const [Played, setPlayed] = useState(false);

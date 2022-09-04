@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -9,10 +8,10 @@ import {
 
 import './assets/fonts/font.ttf';
 
-import App from './App';
-import Privacy from './Privacy';
-import Terms from './Terms';
-import NotFound from './NotFound';
+import App from './pages/App';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import NotFound from './pages/NotFound';
 import './index.css';
 
 ReactDOM.render(

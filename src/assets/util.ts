@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import Fyrlex from './images/fyrlex.png';
 import FTP from './images/53P.gif';
 import NonStop from './images/NonStop.png';
