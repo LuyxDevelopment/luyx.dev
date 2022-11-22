@@ -1,4 +1,6 @@
-function Privacy(): JSX.Element {
+import { NextPage } from 'next';
+
+const Privacy: NextPage = () => {
 	return (<>
 		<div id="content" className="p-8">
 			<h1 className="text-center text-5xl title">Privacy policy</h1>
@@ -34,6 +36,6 @@ function Privacy(): JSX.Element {
 			</p>
 		</div>
 	</>);
-}
+};
 
 export default Privacy;

@@ -1,14 +1,7 @@
-import Fyrlex from './images/fyrlex.png';
-import FTP from './images/53P.gif';
-import NonStop from './images/NonStop.png';
-import Pom from './images/Pom.png';
-import Decc00n from './images/decc00n.png';
-import macedonga from './images/macedonga.png';
-
 export const AlertInfo = {
 	show: true,
-	smallText: 'Info',
-	text: 'CountBot is now available for Beta access. Click here to apply.',
+	smallText: 'NEW',
+	text: 'Luyx LLC is a group of developers ready to support your company, group or personal projects.',
 	url: 'https://count.bot/beta',
 };
 
@@ -20,32 +13,32 @@ interface TeamMember {
 
 export const team: TeamMember[] = [
 	{
-		image: Fyrlex,
+		image: '/assets/images/fyrlex.png',
 		name: 'Fyrlex',
 		role: 'Team lead',
 	},
 	{
-		image: FTP,
+		image: '/assets/images/53P.gif',
 		name: '53P',
 		role: 'Team lead',
 	},
 	{
-		image: NonStop,
+		image: '/assets/images/NonStop.png',
 		name: 'NonStop',
 		role: 'Team lead',
 	},
 	{
-		image: Pom,
+		image: '/assets/images/Pom.png',
 		name: 'Pom',
 		role: 'Contributor',
 	},
 	{
-		image: Decc00n,
+		image: '/assets/images/decc00n.png',
 		name: 'decc00n',
 		role: 'Contributor',
 	},
 	{
-		image: macedonga,
+		image: '/assets/images/macedonga.png',
 		name: 'Marco',
 		role: 'Contributor',
 	},

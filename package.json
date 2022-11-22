@@ -1,53 +1,37 @@
 {
-	"name": "luyx.dev",
+	"name": "luyx-website",
 	"version": "0.1.0",
 	"author": {
 		"name": "Luyx Development",
 		"email": "contact@luyx.dev",
 		"url": "https://luyx.dev"
 	},
-	"license": "MIT",
+	"type": "module",
 	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
 	"dependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.3.0",
-		"react-scripts": "^5.0.1",
-		"serve": "^14.0.1",
-		"web-vitals": "^2.1.2"
+		"@types/node": "18.11.9",
+		"@types/react": "18.0.25",
+		"@types/react-dom": "18.0.9",
+		"eslint": "8.28.0",
+		"eslint-config-next": "13.0.4",
+		"luyx-management-api-types": "github:LuyxDevelopment/luyx-management-api-types",
+		"luyx-management-wrapper": "github:LuyxDevelopment/luyx-management-wrapper",
+		"next": "13.0.4",
+		"next-themes": "^0.2.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-spinners": "^0.13.6",
+		"typescript": "4.9.3"
 	},
 	"devDependencies": {
-		"@types/node": "^18.7.14",
-		"@types/react": "^18.0.18",
-		"@types/react-dom": "^18.0.6",
-		"@typescript-eslint/eslint-plugin": "^5.9.1",
-		"@typescript-eslint/parser": "^5.9.1",
-		"autoprefixer": "^10.4.0",
-		"postcss": "^8.4.16",
-		"tailwindcss": "^3.1.8"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.19",
+		"tailwindcss": "^3.2.4"
 	}
 }
