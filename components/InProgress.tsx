@@ -10,9 +10,9 @@ interface Props {
 const InProgress: NextPage<Props> = ({ pageName }) => {
 	return (
 		<>
+			{useMetaData('Page in progress', 'Page in progress', pageName)}
 			<Layout>
-				{useMetaData('Page in progress', 'Page in progress', pageName)}
-				<div className='relative'>
+				<div className='relative h-screen'>
 					<div className='absolute top-10 left-14 sm:left-20 text-white'>
 						<div className='flex flex-wrap w-56 sm:w-96'>
 							<h1 className='text-5xl pb-2 font-bold text-black'>
@@ -23,17 +23,18 @@ const InProgress: NextPage<Props> = ({ pageName }) => {
 							</p>
 						</div>
 					</div>
+					<div className='grid place-items-center h-96'>
+						<MoonLoader
+							color={'#f28963'}
+							loading={true}
+							size={100}
+							speedMultiplier={0.5}
+							aria-label='Loading Spinner'
+							data-testid='loader'
+						/>
+					</div>
 				</div>
-				<div className='grid place-items-center h-96'>
-					<MoonLoader
-						color={'#f28963'}
-						loading={true}
-						size={100}
-						speedMultiplier={0.5}
-						aria-label='Loading Spinner'
-						data-testid='loader'
-					/>
-				</div>
+				<div className='bg-gradient-to-b from-white to-egg-sour p-8' />
 			</Layout>
 		</>
 	);

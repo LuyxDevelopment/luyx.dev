@@ -3,9 +3,8 @@ import { FC } from 'react';
 const Footer: FC = () => {
 
 	return (
-		<footer className='w-screen bg-gradient-to-b to-black from-gray-900'>
+		<footer className='w-screen bg-gradient-to-b to-reddish-orange from-egg-sour'>
 			<div className='max-w-4xl mx-auto pt-16 lg:pt-32 pb-16 lg:flex'>
-				<img alt='White cube logo' src={'/assets/images/cube-white.svg'} className='w-24 lg:mx-0 mx-auto' />
 
 				<div className='lg:mt-0 mt-8 lg:gap-y-0 gap-y-8 lg:ml-16 grid lg:grid-cols-4 gap-x-16 lg:text-left text-center'>
 					<div>
@@ -18,7 +17,7 @@ const Footer: FC = () => {
 								Tree Farmer
 							</a>
 							<a href='https://2048bot.com' className='decoration-transparent decoration-2 text-sm hover:decoration-yellow-500 transition-all duration-300 hover:underline'>
-								2048 Bot
+								2048
 							</a>
 						</div>
 					</div>

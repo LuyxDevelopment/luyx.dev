@@ -57,15 +57,13 @@ const Dropdown = ({
 					? 'flex flex-row-reverse'
 					: direction === 'bottom'
 						? 'relative inline-block'
-						: ''
-				}`}
+						: ''}`}
 			ref={dropdownRef}
 		>
 			<button onClick={toggleVisibility}>{children}</button>
 			{isVisible && (
 				<div
-					className={`${newSpace ? 'relative' : 'absolute'
-						} ${tw} flex flex-col rounded-md drop-shadow-lg child-xl cursor-pointer`}
+					className={`${newSpace ? 'relative' : 'absolute'} ${tw} flex flex-col rounded-md drop-shadow-lg child-xl cursor-pointer`}
 				>
 					{items.map((item, i) => {
 						return (

@@ -5,16 +5,16 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		colors: {
-			transparent: 'transparent',
-			current: 'currentColor',
-			'deep-carmine-pink': '#f23041',
-			'bean-red': '#f25c69',
-			'egg-sour': '#fff3dc',
-			'reddish-orange': '#f25922',
-			'basket-ball-orange': '#f28963',
-		},
 		extend: {
+			colors: {
+				transparent: 'transparent',
+				current: 'currentColor',
+				'deep-carmine-pink': '#f23041',
+				'bean-red': '#f25c69',
+				'egg-sour': '#fff3dc',
+				'reddish-orange': '#f25922',
+				'basket-ball-orange': '#f28963',
+			},
 			keyframes: {
 				translate_top: {
 					'0%': {

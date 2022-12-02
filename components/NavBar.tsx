@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Dropdown, { DropdownItem } from './Dropdown';
 import { NavBarPage } from '../src/typings';
 
-const shopping: DropdownItem[] = [
+const teamDropdown: DropdownItem[] = [
 	{
 		text: 'Admin',
 		href: '/admin',
@@ -15,29 +15,14 @@ const shopping: DropdownItem[] = [
 	},
 ];
 
-const about: DropdownItem[] = [
-	{
-		text: 'Praesidium',
-		href: '/praesidium',
-	},
-	{
-		text: 'News',
-		href: '/news',
-	},
-	{
-		text: 'Events',
-		href: '/events',
-	},
-];
-
 const pages: NavBarPage[] = [
 	{
 		name: 'Home',
 		url: '/',
 	},
 	{
-		name: 'Jobs',
-		url: '/jobs',
+		name: 'GitHub',
+		url: 'https://github.com/LuyxDevelopment',
 	},
 ];
 
@@ -53,16 +38,12 @@ const Navbar: FC = () => {
 
 	return (
 		<>
-			<nav
-				className={
-					'bg-egg-sour text-black shadow-lg p-3 flex flex-row justify-between sm:justify-evenly items-center'
-				}
-			>
+			<nav className={'bg-egg-sour text-black shadow-lg p-1 flex flex-row justify-between sm:justify-evenly items-center'}>
 				<div className="cursor-pointer">
 					<Image
-						src="/assets/images/luyx.png"
-						width="50"
-						height="60"
+						src="/assets/images/luyx.svg"
+						width='70'
+						height='70'
 						alt="Logo"
 						onClick={(): string => (window.location.href = '/')}
 					/>
@@ -71,7 +52,7 @@ const Navbar: FC = () => {
 					{pages.map((page, i) => {
 						return (
 							<h1
-								className="cursor-pointer bg-red-500 hover:bg-red-600 text-black font-bold py-2 px-3 ml-1 mr-1 rounded-2xl transition-all duration-300 ease-in-out"
+								className="cursor-pointer hover:bg-basket-ball-orange text-black font-bold py-2 px-3 ml-1 mr-1 rounded-2xl transition-all duration-300 ease-in-out"
 								onClick={(): string => (window.location.href = page.url)}
 								key={i}
 							>
@@ -79,16 +60,7 @@ const Navbar: FC = () => {
 							</h1>
 						);
 					})}
-					<Dropdown
-						direction="bottom"
-						items={about}
-						tw="z-10"
-					>
-						<h1 className="cursor-pointer bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 ml-1 mr-1 rounded-2xl transition-all duration-300 ease-in-out">
-							About
-						</h1>
-					</Dropdown>
-					<Dropdown
+					{/* <Dropdown
 						direction="bottom"
 						items={shopping}
 						tw="z-10"
@@ -96,7 +68,7 @@ const Navbar: FC = () => {
 						<h1 className="cursor-pointer bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 ml-1 mr-1 rounded-2xl transition-all duration-300 ease-in-out">
 							Team
 						</h1>
-					</Dropdown>
+					</Dropdown> */}
 				</div>
 				<span
 					className="block float-right sm:hidden cursor-pointer hover:scale-90 transition-all duration-300 ease-in-out"

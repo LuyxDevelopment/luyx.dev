@@ -3,7 +3,7 @@ import InProgress from '../../components/InProgress';
 
 const AdminSettings: NextPage = () => {
 	return (
-		<InProgress pageName='settings'></InProgress>
+		<InProgress pageName='/admin/settings'></InProgress>
 	);
 };
 
