@@ -1,12 +1,10 @@
-import { LuyxUser } from 'luyx-management-wrapper';
-import { APIUser, BaseAuthRouteOptions } from 'luyx-management-api-types/build/v1';
 import { NextPage, NextPageContext } from 'next';
 import Layout from '../components/Layout';
 import { useMetaData } from '../lib/hooks/useMetaData';
 import { AlertInfo } from '../src/util';
 
 interface Props {
-	users: LuyxUser[];
+	users: any[];
 }
 
 const Home: NextPage<Props> = ({ users }) => {
@@ -123,7 +121,7 @@ const Home: NextPage<Props> = ({ users }) => {
 
 export const getServerSideProps = async ({
 	res,
-}: NextPageContext): Promise<{ props: { users: APIUser[]; }; }> => {
+}: NextPageContext): Promise<{ props: { users: []; }; }> => {
 	res?.setHeader(
 		'Cache-Control',
 		'public, s-maxage=10, stale-while-revalidate=59',
@@ -140,7 +138,7 @@ export const getServerSideProps = async ({
 		},
 	);
 
-	const response = (await request.json()) as BaseAuthRouteOptions<APIUser[]>['Reply'];
+	const response = (await request.json());
 
 	return {
 		props: {
