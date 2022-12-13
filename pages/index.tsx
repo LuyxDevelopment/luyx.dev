@@ -1,4 +1,6 @@
 import { NextPage, NextPageContext } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 import { useMetaData } from '../lib/hooks/useMetaData';
 import { AlertInfo } from '../src/util';
@@ -56,17 +58,24 @@ const Home: NextPage<Props> = ({ users }) => {
 				</div>
 
 				<div id='content' className='bg-gradient-to-b from-white to-egg-sour p-8'>
-					{/* <h1 className='text-center text-3xl title'>Our projects</h1>
+					<h1 className='text-center text-3xl title'>Our Projects</h1>
 					<h2 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
-						These are the projects that we're currently working on.
+						These are the projects that we&apos;re currently working on.
 					</h2>
 					<div className='max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8'>
-						<a
-							href='https://count.bot'
-							className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-orange-500 hover:shadow-lg hover:shadow-orange-500/40 bg-black'
+						<Link
+							legacyBehavior
+							target={'_blank'}
+							rel='noopener noreferrer'
+							href={'https://github.com/LuyxDevelopment'}
 						>
-							<img alt='CountBot logo' src={'/assets/images/countbot.svg'} className='h-16 mx-auto' />
-						</a>
+							<Image
+								alt='Luyx Project'
+								src='/assets/images/luyxcard.png'
+								height={958}
+								width={491}
+								className='p-1 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-egg-sour-500 hover:shadow-lg hover:shadow-egg-sour-500/40 bg-egg-sour' />
+						</Link>
 						<a
 							href='https://treefarmer.xyz'
 							style={{ background: '#236f21' }}
@@ -74,9 +83,9 @@ const Home: NextPage<Props> = ({ users }) => {
 						>
 							<img alt='Tree farmer logo' src={'/assets/images/tree-farmer.svg'} className='h-16 mx-auto' />
 						</a>
-					</div> */}
+					</div>
 
-					<h1 className='text-center text-3xl title mt-8'>Our Team</h1>
+					<h1 className='text-center text-3xl title mt-8 cursor-pointer' onClick={(): string => (window.location.href = '/team')}>Our Team</h1>
 					<h2 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
 						Spanning multiple countries and timezones, we can get it done.
 					</h2>

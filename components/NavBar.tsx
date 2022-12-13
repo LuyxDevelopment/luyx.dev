@@ -21,6 +21,10 @@ const pages: NavBarPage[] = [
 		url: '/',
 	},
 	{
+		name: 'Projects',
+		url: '/projects',
+	},
+	{
 		name: 'GitHub',
 		url: 'https://github.com/LuyxDevelopment',
 	},
