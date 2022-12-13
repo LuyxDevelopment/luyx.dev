@@ -64,7 +64,6 @@ const Home: NextPage<Props> = ({ users }) => {
 					</h2>
 					<div className='max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8'>
 						<Link
-							legacyBehavior
 							target={'_blank'}
 							rel='noopener noreferrer'
 							href={'https://github.com/LuyxDevelopment'}
@@ -76,13 +75,51 @@ const Home: NextPage<Props> = ({ users }) => {
 								width={491}
 								className='p-1 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-egg-sour-500 hover:shadow-lg hover:shadow-egg-sour-500/40 bg-egg-sour' />
 						</Link>
-						<a
-							href='https://treefarmer.xyz'
-							style={{ background: '#236f21' }}
-							className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-green-500 hover:shadow-lg hover:shadow-green-500/40 bg-black'
+						<Link
+							target={'_blank'}
+							rel='noopener noreferrer'
+							href={'https://github.com/LuyxDevelopment'}
 						>
-							<img alt='Tree farmer logo' src={'/assets/images/tree-farmer.svg'} className='h-16 mx-auto' />
-						</a>
+							<Image
+								alt='Luyx Project'
+								src='/assets/images/aesculapiacard.png'
+								height={958}
+								width={491}
+								className='p-1 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-egg-sour-500 hover:shadow-lg hover:shadow-egg-sour-500/40 bg-egg-sour' />
+						</Link>
+						<Link
+							target={'_blank'}
+							rel='noopener noreferrer'
+							href={'https://treefarmer.xyz'}
+						>
+							<div
+								style={{ background: '#236f21' }}
+								className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-green-500 hover:shadow-lg hover:shadow-green-500/40 bg-black'
+							>
+								<Image
+									alt='Tree farmer logo'
+									src={'/assets/images/tree-farmer.svg'}
+									height={100}
+									width={500}
+									className='h-16 mx-auto' />
+							</div>
+						</Link>
+						<Link
+							target={'_blank'}
+							rel='noopener noreferrer'
+							href='https://count.bot'
+						>
+							<div
+								className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-orange-500 hover:shadow-lg hover:shadow-orange-500/40 bg-black'
+							>
+								<Image
+									alt='CountBot logo'
+									src={'/assets/images/countbot.svg'}
+									height={100}
+									width={500}
+									className='h-16 mx-auto' />
+							</div>
+						</Link>
 					</div>
 
 					<h1 className='text-center text-3xl title mt-8 cursor-pointer' onClick={(): string => (window.location.href = '/team')}>Our Team</h1>
@@ -110,18 +147,25 @@ const Home: NextPage<Props> = ({ users }) => {
 						<h2 className='text-center mt-2 mx-auto'>
 							Something.Host provides the fastest servers. We use them to run your projects.
 						</h2>
-						<div className='grid mt-8'>
-							<a
-								href='https://something.host/en?fpr=fyrlex'
-								style={{ background: '#6a54dd' }}
-								className='flex p-4 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 bg-black'
-							>
-								<div className='mx-auto flex'>
-									<img alt='Something.host logo' src={'/assets/images/somethinghost.svg'} className='h-8 my-auto' />
-									<p className='ml-4 my-auto'>Check out Something.Host</p>
+						<Link
+							href='https://something.host/en?fpr=fyrlex'
+							target={'_blank'}
+							rel={'noopener noreferrer'}
+						>
+							<div className='grid mt-8'>
+								<div style={{ background: '#6a54dd' }} className='flex p-4 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-indigo-500 hover:shadow-lg hover:shadow-indigo-500/40 bg-black'>
+									<div className='mx-auto flex'>
+										<Image
+											alt='Something.host logo'
+											src={'/assets/images/somethinghost.svg'}
+											height={8}
+											width={'100'}
+											className='h-8 my-auto' />
+										<p className='ml-4 my-auto'>Check out Something.Host</p>
+									</div>
 								</div>
-							</a>
-						</div>
+							</div>
+						</Link>
 					</div>
 				</div>
 			</Layout>
@@ -142,7 +186,7 @@ export const getServerSideProps = async ({
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': process.env.LUYX_API_KEY
+				'Authorization': process.env.LUYX_API_KEY!
 			},
 		},
 	);
