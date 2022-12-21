@@ -2,6 +2,12 @@
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
+	images: {
+		domains: [
+			'avatars.githubusercontent.com',
+			'cdn.discordapp.com'
+		]
+	}
 };
 
 export default nextConfig;

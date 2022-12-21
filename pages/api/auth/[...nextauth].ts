@@ -1,23 +1,29 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
+import GithubProvider, { GithubProfile } from 'next-auth/providers/github';
+import { githubUsers } from '../../../src/users';
 
 export const authOptions: NextAuthOptions = {
-	secret: process.env.NEXTAUTH_SECRET!,
+	secret: process.env.NEXTAUTH_SECRET,
 	providers: [
 		GithubProvider({
-			clientId: process.env.GITHUB_CLIENT_ID!,
-			clientSecret: process.env.GITHUB_SECRET!,
+			clientId: process.env.GITHUB_CLIENT_ID,
+			clientSecret: process.env.GITHUB_SECRET,
 		}),
 	],
 	callbacks: {
-		redirect({ url, baseUrl }) {
-			if (url.startsWith('/'))
-				return `${baseUrl}${url}`;
+		session({ session, token, user }) {
+			if (session.user) {
+				// @ts-ignore
+				session.user.sub = token.sub;
+			}
+			return session;
+		},
+		signIn({ account, user, profile }) {
+			if (!(Object.values(githubUsers).map(e => e.id)).includes((profile as GithubProfile).id)) {
+				return false;
+			}
 
-			else if (new URL(url).origin === baseUrl)
-				return url;
-
-			return baseUrl;
+			return true;
 		},
 	}
 };

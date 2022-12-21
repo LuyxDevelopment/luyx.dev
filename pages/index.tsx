@@ -1,3 +1,4 @@
+import { APIUser, BaseAuthRouteOptions } from 'luyx-management-api-types/v1/index.js';
 import { NextPage, NextPageContext } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -130,13 +131,24 @@ const Home: NextPage<Props> = ({ users }) => {
 						{
 							users.map((t, i) => {
 								return (
-									<div className='p-4 bg-egg-sour shadow-lg ring-1 ring-gray-200/30 rounded-md flex cursor-pointer' key={i} onClick={(): string => (window.location.href = `https://github.com/${t.contact.gitHub}`)}>
-										<img alt={t.alias} src={t.avatar} className='rounded-md w-24 mr-4' />
-										<div className='w-full'>
-											<p className='text-xl text-ellipsis title'>{t.alias}</p>
-											<p className='text-sm text-ellipsis'>{t.position}</p>
+									<Link
+										href={`https://github.com/${t.contact.gitHub}`}
+										key={i}
+									>
+										<div className='p-4 bg-egg-sour shadow-lg ring-1 ring-gray-200/30 rounded-md flex cursor-pointer'>
+											<Image
+												alt={t.alias}
+												src={t.avatar}
+												className='rounded-md w-24 mr-4'
+												height={1}
+												width={1} />
+											<div className='w-full'>
+												<p className='text-xl text-ellipsis title'>{t.alias}</p>
+												<p className='text-sm text-ellipsis'>{t.position}</p>
+											</div>
 										</div>
-									</div>
+									</Link>
+
 								);
 							})
 						}
@@ -174,7 +186,7 @@ const Home: NextPage<Props> = ({ users }) => {
 
 export const getServerSideProps = async ({
 	res,
-}: NextPageContext): Promise<{ props: { users: []; }; }> => {
+}: NextPageContext): Promise<{ props: { users: APIUser[]; }; }> => {
 	res?.setHeader(
 		'Cache-Control',
 		'public, s-maxage=10, stale-while-revalidate=59',
@@ -186,12 +198,12 @@ export const getServerSideProps = async ({
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				'Authorization': process.env.LUYX_API_KEY!
+				'Authorization': process.env.LUYX_API_KEY
 			},
 		},
 	);
 
-	const response = (await request.json());
+	const response = (await request.json()) as BaseAuthRouteOptions<APIUser[]>['Reply'];
 
 	return {
 		props: {

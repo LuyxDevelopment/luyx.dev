@@ -1,9 +1,8 @@
-import { GetServerSidePropsContext, NextPage } from 'next';
-import { unstable_getServerSession } from 'next-auth';
-import { getSession, signIn, signOut, useSession } from 'next-auth/react';
+
+import { NextPage } from 'next';
+import { signIn, useSession } from 'next-auth/react';
 
 import Layout from '../../components/Layout';
-import { authOptions } from '../api/auth/[...nextauth]';
 
 const AdminLogin: NextPage = () => {
 	const { data: session } = useSession();
@@ -11,36 +10,29 @@ const AdminLogin: NextPage = () => {
 	if (session?.user) {
 		return (
 			<>
-				<Layout>
-					<div>
-						<h1>Signed in as {session.user.email}</h1>
-						<button onClick={(): Promise<unknown> => signOut()}>Sign out</button>
-					</div>
-				</Layout>
+				{window.location.href = '/admin'}
 			</>
 		);
 	}
-
 	return (
 		<>
 			<Layout>
-				<h1>Not signed in</h1>
-				<button onClick={(): Promise<unknown> => signIn()}>Sign in</button>
+				<div className='relative h-screen'>
+					<div className='h-96 grid grid-cols gap-4 place-content-center text-black'>
+						<h1 className='text-5xl'>
+							Admin Page
+						</h1>
+						<button className='bg-egg-sour hover:bg-orange-200 font-bold py-3 px-5 text-2xl rounded-2xl transition-all duration-300 ease-in-out' onClick={(): Promise<unknown> => signIn('github')}>
+							Sign In
+						</button>
+						<button className='bg-egg-sour hover:bg-orange-200 font-bold py-3 px-5 text-2xl rounded-2xl transition-all duration-300 ease-in-out' onClick={(): string => (window.location.href = '/')}>
+							Home
+						</button>
+					</div>
+				</div>
 			</Layout>
 		</>
 	);
 };
 
 export default AdminLogin;
-
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-	const session = await unstable_getServerSession(context.req, context.res, authOptions);
-
-	console.log(session);
-
-	return {
-		props: {
-			session,
-		},
-	};
-}
