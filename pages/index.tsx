@@ -3,11 +3,11 @@ import { NextPage, NextPageContext } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import TeamMemberCard from '../components/TeamMemberCard';
 import { useMetaData } from '../lib/hooks/useMetaData';
-import { AlertInfo } from '../src/util';
 
 interface Props {
-	users: any[];
+	users: APIUser[];
 }
 
 const Home: NextPage<Props> = ({ users }) => {
@@ -33,28 +33,14 @@ const Home: NextPage<Props> = ({ users }) => {
 							Hello, we are Luyx LLC.
 						</h1>
 						<p>
-							A fullstack team of developers ready to support your projects, business, management and more.
+							A fullstack team of developers ready to build platforms for your project, business or management needs.
 						</p>
-						{/* {
-							AlertInfo.show && <div className='max-w-4xl mx-auto lg:mt-0 mt-8'>
-								<div
-									className={'rounded-xl border-2 border-transparent relative mx-4' + (AlertInfo.url && ' cursor-pointer')}
-									onClick={(): void => {
-										if (AlertInfo.url) window.location.href = AlertInfo.url;
-									}}
-								>
-									<div className={'absolute w-full h-full rounded-xl border-2 border-gray-500 border-dashed transition-all ' + (AlertInfo.url ? 'hover:animate-stop animate-pulse-fast' : 'animate-pulse-fast')}></div>
-									<div className='p-3 text-center'>
-										<span className='p-1 text-sm bg-green-600 rounded-lg mr-3 uppercase'>
-											{AlertInfo.smallText}
-										</span>
-										<span className='text-base'>
-											{AlertInfo.text}
-										</span>
-									</div>
-								</div>
-							</div>
-						} */}
+						<h2 className='text-2xl font-bold mt-5'>
+							Interested?
+						</h2>
+						<p>
+							Reach out to us at contact@luyx.dev
+						</p>
 					</div>
 				</div>
 
@@ -129,26 +115,9 @@ const Home: NextPage<Props> = ({ users }) => {
 					</h2>
 					<div className='max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8'>
 						{
-							users.map((t, i) => {
+							users.map((u, i) => {
 								return (
-									<Link
-										href={`https://github.com/${t.contact.gitHub}`}
-										key={i}
-									>
-										<div className='p-4 bg-egg-sour shadow-lg ring-1 ring-gray-200/30 rounded-md flex cursor-pointer'>
-											<Image
-												alt={t.alias}
-												src={t.avatar}
-												className='rounded-md w-24 mr-4'
-												height={1}
-												width={1} />
-											<div className='w-full'>
-												<p className='text-xl text-ellipsis title'>{t.alias}</p>
-												<p className='text-sm text-ellipsis'>{t.position}</p>
-											</div>
-										</div>
-									</Link>
-
+									<TeamMemberCard user={u} key={i} />
 								);
 							})
 						}
