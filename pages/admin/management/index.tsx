@@ -4,26 +4,26 @@ import { unstable_getServerSession } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image.js';
 
-import AdminPageCard from '../../components/AdminCard';
-import Layout from '../../components/Layout';
-import { useMetaData } from '../../lib/hooks/useMetaData';
-import { githubUsers } from '../../src/users';
-import { authOptions } from '../api/auth/[...nextauth]';
+import AdminPageCard from '../../../components/AdminCard';
+import Layout from '../../../components/Layout';
+import { useMetaData } from '../../../lib/hooks/useMetaData';
+import { githubUsers } from '../../../src/users';
+import { authOptions } from '../../api/auth/[...nextauth]';
 
 const pages: { name: string, url: string, svg: string; }[] = [
 	{
-		name: 'Projects',
-		url: '/admin/projects',
-		svg: '/assets/images/projects.svg',
+		name: 'Users',
+		url: '/admin/users',
+		svg: '/assets/images/users.svg',
 	},
 	{
-		name: 'Management',
+		name: 'System',
 		svg: '/assets/images/management.svg',
 		url: '/admin/management',
 	},
 ];
 
-const Admin: NextPage = () => {
+const AdminManagementIndex: NextPage = () => {
 	const { data } = useSession();
 
 	return (
@@ -64,7 +64,7 @@ const Admin: NextPage = () => {
 	);
 };
 
-export default Admin;
+export default AdminManagementIndex;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 	const session = await unstable_getServerSession(req, res, authOptions);

@@ -15,7 +15,7 @@ const TeamMemberCard: FC<Props> = ({ user }) => {
 			<div className='p-4 bg-egg-sour shadow-lg ring-1 ring-gray-200/30 rounded-md flex cursor-pointer'>
 				<Image
 					alt={user.alias}
-					src={user.avatar}
+					src={user.avatarURL}
 					className='rounded-md w-24 mr-4'
 					height={256}
 					width={256}

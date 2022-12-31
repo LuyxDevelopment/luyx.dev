@@ -1,16 +1,18 @@
-import { APIUser, BaseAuthRouteOptions } from 'luyx-management-api-types/v1/index.js';
+import { APIProject, APIUser, BaseAuthRouteOptions } from 'luyx-management-api-types/v1';
 import { NextPage, NextPageContext } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
+import ProjectCard from '../components/ProjectCard';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { useMetaData } from '../lib/hooks/useMetaData';
 
 interface Props {
 	users: APIUser[];
+	projects: APIProject[];
 }
 
-const Home: NextPage<Props> = ({ users }) => {
+const Home: NextPage<Props> = ({ users, projects }) => {
 	return (
 		<>
 			{useMetaData('Home', 'Luyx Home Page', '/')}
@@ -39,8 +41,16 @@ const Home: NextPage<Props> = ({ users }) => {
 							Interested?
 						</h2>
 						<p>
-							Reach out to us at contact@luyx.dev
+							Reach out to us at <a href='mailto:contact@luyx.dev'>contact@luyx.dev</a>
 						</p>
+					</div>
+				</div>
+
+				<div className="h-screen w-screen grid items-center">
+					<div>
+						<img alt="Luyx Development Logo" src='/assets/images/luyx.svg' className="mx-auto h-64 lg:block hidden" />
+						<img alt="Luyx Development Small" src='/assets/images/luyx.svg' className="mx-auto h-64 block lg:hidden" />
+						<p>Luyx Development</p>
 					</div>
 				</div>
 
@@ -50,30 +60,13 @@ const Home: NextPage<Props> = ({ users }) => {
 						These are the projects that we&apos;re currently working on.
 					</h2>
 					<div className='max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8'>
-						<Link
-							target={'_blank'}
-							rel='noopener noreferrer'
-							href={'https://github.com/LuyxDevelopment'}
-						>
-							<Image
-								alt='Luyx Project'
-								src='/assets/images/luyxcard.png'
-								height={958}
-								width={491}
-								className='p-1 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-egg-sour-500 hover:shadow-lg hover:shadow-egg-sour-500/40 bg-egg-sour' />
-						</Link>
-						<Link
-							target={'_blank'}
-							rel='noopener noreferrer'
-							href={'https://github.com/LuyxDevelopment'}
-						>
-							<Image
-								alt='Luyx Project'
-								src='/assets/images/aesculapiacard.png'
-								height={958}
-								width={491}
-								className='p-1 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-egg-sour-500 hover:shadow-lg hover:shadow-egg-sour-500/40 bg-egg-sour' />
-						</Link>
+						{
+							projects.map((u, i) => {
+								return (
+									<ProjectCard project={u} key={i} />
+								);
+							})
+						}
 						<Link
 							target={'_blank'}
 							rel='noopener noreferrer'
@@ -155,13 +148,13 @@ const Home: NextPage<Props> = ({ users }) => {
 
 export const getServerSideProps = async ({
 	res,
-}: NextPageContext): Promise<{ props: { users: APIUser[]; }; }> => {
+}: NextPageContext): Promise<{ props: { users: APIUser[]; projects: APIProject[]; }; }> => {
 	res?.setHeader(
 		'Cache-Control',
 		'public, s-maxage=10, stale-while-revalidate=59',
 	);
 
-	const request = await fetch(
+	const usersRequest = await fetch(
 		'https://api.luyx.dev/v1/users',
 		{
 			method: 'GET',
@@ -172,11 +165,26 @@ export const getServerSideProps = async ({
 		},
 	);
 
-	const response = (await request.json()) as BaseAuthRouteOptions<APIUser[]>['Reply'];
+	const usersResponse = (await usersRequest.json()) as BaseAuthRouteOptions<APIUser[]>['Reply'];
+
+	const projectsRequest = await fetch(
+		'https://api.luyx.dev/v1/projects',
+		{
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': process.env.LUYX_API_KEY
+			},
+		},
+	);
+
+
+	const projectsResponse = (await projectsRequest.json()) as BaseAuthRouteOptions<APIProject[]>['Reply'];
 
 	return {
 		props: {
-			users: response.data!
+			users: usersResponse.data!,
+			projects: projectsResponse.data!
 		},
 	};
 };
