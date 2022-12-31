@@ -7,7 +7,8 @@ const nextConfig = {
 			'avatars.githubusercontent.com',
 			'cdn.discordapp.com',
 			'skillicons.dev',
-			'127.0.0.1'
+			'127.0.0.1',
+			'luyx.dev'
 		]
 	}
 };
