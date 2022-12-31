@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import ProjectCard from '../components/ProjectCard';
-import TeamMemberCard from '../components/TeamMemberCard';
+import UserCard from '../components/UserCard';
 import { useMetaData } from '../lib/hooks/useMetaData';
 
 interface Props {
@@ -31,96 +31,123 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 
 				<div className='h-screen w-screen grid items-center'>
 					<div className='container mb-20'>
-						<h1 className='text-5xl font-bold mb-5'>
-							Hello, we are Luyx LLC.
-						</h1>
-						<p>
-							A fullstack team of developers ready to build platforms for your project, business or management needs.
-						</p>
-						<h2 className='text-2xl font-bold mt-5'>
+						<div className='mb-10'>
+							<h1 className='text-5xl font-bold mb-2'>
+								Hello, we are Luyx LLC.
+							</h1>
+							<p className='text-2xl mb-2'>
+								A fullstack team of developers ready to build scalable platforms for your needs.
+							</p>
+							<p className='italic'>
+								suitable for: artists, musicians, photographers, entrepreneurs, organizations, volunteers
+							</p>
+						</div>
+						<div className='mb-10'>
+							<h2 className='text-2xl font-bold mb-2'>
+								An overview of our expertise
+							</h2>
+							<div className='mb-2'>
+								<Link
+									href={'https://skillicons.dev'}>
+									<img
+										alt='Skill Icons'
+										src={'https://skillicons.dev/icons?i=nodejs,ts,java,py,html,react,git,mongodb,mysql,nginx,docker,gcp,&theme=light'}
+										width={2048}
+										height={2048}
+									/>
+								</Link></div>
+							<p className='italic'>
+								platforms: websites, webstores, apps, data management systems, integrations with other software
+							</p>
+						</div>
+						<h2 className='text-3xl font-bold mt-5'>
 							Interested?
 						</h2>
 						<p>
-							Reach out to us at <a href='mailto:contact@luyx.dev'>contact@luyx.dev</a>
+							Reach out to us at <a className='font-bold' href='mailto:contact@luyx.dev'>contact@luyx.dev</a>
 						</p>
 					</div>
 				</div>
 
-				<div className="h-screen w-screen grid items-center">
-					<div>
+				{/* <div className="h-screen w-screen grid items-center">
+					<div className=''>
 						<img alt="Luyx Development Logo" src='/assets/images/luyx.svg' className="mx-auto h-64 lg:block hidden" />
 						<img alt="Luyx Development Small" src='/assets/images/luyx.svg' className="mx-auto h-64 block lg:hidden" />
-						<p>Luyx Development</p>
+						<p className="text-2xl font-bold">Luyx Development</p>
 					</div>
-				</div>
+				</div> */}
 
-				<div id='content' className='bg-gradient-to-b from-white to-egg-sour p-8'>
-					<h1 className='text-center text-3xl title'>Our Projects</h1>
-					<h2 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
-						These are the projects that we&apos;re currently working on.
-					</h2>
-					<div className='max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8'>
-						{
-							projects.map((u, i) => {
-								return (
-									<ProjectCard project={u} key={i} />
-								);
-							})
-						}
-						<Link
-							target={'_blank'}
-							rel='noopener noreferrer'
-							href={'https://treefarmer.xyz'}
-						>
-							<div
-								style={{ background: '#236f21' }}
-								className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-green-500 hover:shadow-lg hover:shadow-green-500/40 bg-black'
+				<div className='bg-gradient-to-b from-white to-egg-sour p-8'>
+					{/* <div>
+						<h2 className='text-center text-3xl title'>Our Projects</h2>
+						<h3 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
+							These are the projects that we&apos;re currently working on.
+						</h3>
+						<div className='max-w-4xl mx-auto mt-8 grid lg:grid-cols-2 gap-8'>
+							{
+								projects.filter(u => !u.isPrivate).map((u, i) => {
+									return (
+										<ProjectCard project={u} key={i} />
+									);
+								})
+							}
+							<Link
+								target={'_blank'}
+								rel='noopener noreferrer'
+								href={'https://treefarmer.xyz'}
 							>
-								<Image
-									alt='Tree farmer logo'
-									src={'/assets/images/tree-farmer.svg'}
-									height={100}
-									width={500}
-									className='h-16 mx-auto' />
-							</div>
-						</Link>
-						<Link
-							target={'_blank'}
-							rel='noopener noreferrer'
-							href='https://count.bot'
-						>
-							<div
-								className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-orange-500 hover:shadow-lg hover:shadow-orange-500/40 bg-black'
+								<div
+									style={{ background: '#236f21' }}
+									className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-green-500 hover:shadow-lg hover:shadow-green-500/40 bg-black'
+								>
+									<Image
+										alt='Tree farmer logo'
+										src={'/assets/images/tree-farmer.svg'}
+										height={100}
+										width={500}
+										className='h-16 mx-auto' />
+								</div>
+							</Link>
+							<Link
+								target={'_blank'}
+								rel='noopener noreferrer'
+								href='https://count.bot'
 							>
-								<Image
-									alt='CountBot logo'
-									src={'/assets/images/countbot.svg'}
-									height={100}
-									width={500}
-									className='h-16 mx-auto' />
-							</div>
-						</Link>
+								<div
+									className='p-8 cursor-pointer rounded-md shadow-lg transition-all hover:-translate-y-2 duration-300 ring-1 ring-gray-200/30 hover:ring-orange-500 hover:shadow-lg hover:shadow-orange-500/40 bg-black'
+								>
+									<Image
+										alt='CountBot logo'
+										src={'/assets/images/countbot.svg'}
+										height={100}
+										width={500}
+										className='h-16 mx-auto' />
+								</div>
+							</Link>
+						</div>
+					</div> */}
+
+					<div>
+						<h2 className='text-center text-3xl title mt-8 cursor-pointer' onClick={(): string => (window.location.href = '/team')}>Our Team</h2>
+						<h3 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
+							Spanning multiple countries and timezones, we can get it done.
+						</h3>
+						<div className='max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8'>
+							{
+								users.map((u, i) => {
+									return (
+										<UserCard user={u} key={i} />
+									);
+								})
+							}
+						</div>
 					</div>
 
-					<h1 className='text-center text-3xl title mt-8 cursor-pointer' onClick={(): string => (window.location.href = '/team')}>Our Team</h1>
-					<h2 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
-						Spanning multiple countries and timezones, we can get it done.
-					</h2>
-					<div className='max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8'>
-						{
-							users.map((u, i) => {
-								return (
-									<TeamMemberCard user={u} key={i} />
-								);
-							})
-						}
-					</div>
-
-					<h1 className='text-center text-3xl title mt-8'>Our Hosting</h1>
+					<h2 className='text-center text-3xl title mt-8'>Our Hosting</h2>
 					<div className='max-w-4xl mx-auto'>
-						<h2 className='text-center mt-2 mx-auto'>
+						<h3 className='text-center mt-2 mx-auto'>
 							Something.Host provides the fastest servers. We use them to run your projects.
-						</h2>
+						</h3>
 						<Link
 							href='https://something.host/en?fpr=fyrlex'
 							target={'_blank'}

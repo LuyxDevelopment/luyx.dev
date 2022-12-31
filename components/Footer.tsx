@@ -8,7 +8,7 @@ const Footer: FC = () => {
 
 				<div className='lg:mt-0 mt-8 lg:gap-y-0 gap-y-8 lg:ml-16 grid lg:grid-cols-4 gap-x-16 lg:text-left text-center'>
 					<div>
-						<h3 className='text-xl title'>Projects</h3>
+						<h3 className='text-xl title font-bold'>Projects</h3>
 						<div className='grid gap-y-1'>
 							<a href='https://count.bot' className='decoration-transparent decoration-2 text-sm hover:decoration-orange-500 transition-all duration-300 hover:underline'>
 								CountBot
@@ -22,7 +22,7 @@ const Footer: FC = () => {
 						</div>
 					</div>
 					<div>
-						<h3 className='text-xl title'>Sponsors</h3>
+						<h3 className='text-xl title font-bold'>Sponsors</h3>
 						<div className='grid gap-y-1'>
 							<a href='https://something.host/en?fpr=fyrlex' className='decoration-transparent decoration-2 text-sm hover:decoration-indigo-500 transition-all duration-300 hover:underline'>
 								Something.Host
@@ -30,7 +30,7 @@ const Footer: FC = () => {
 						</div>
 					</div>
 					<div>
-						<h3 className='text-xl title'>Legal</h3>
+						<h3 className='text-xl title font-bold'>Legal</h3>
 						<div className='grid gap-y-1'>
 							<a href='/privacy' className='decoration-transparent decoration-2 text-sm hover:decoration-red-500 transition-all duration-300 hover:underline'>
 								Privacy policy
@@ -41,7 +41,7 @@ const Footer: FC = () => {
 						</div>
 					</div>
 					<div>
-						<h3 className='text-xl title'>Socials</h3>
+						<h3 className='text-xl title font-bold'>Socials</h3>
 						<div className='grid gap-y-1'>
 							<a href='https://github.com/LuyxDevelopment' className='decoration-transparent decoration-2 text-sm hover:decoration-blue-500 transition-all duration-300 hover:underline'>
 								GitHub

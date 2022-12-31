@@ -5,7 +5,9 @@ const nextConfig = {
 	images: {
 		domains: [
 			'avatars.githubusercontent.com',
-			'cdn.discordapp.com'
+			'cdn.discordapp.com',
+			'skillicons.dev',
+			'127.0.0.1'
 		]
 	}
 };

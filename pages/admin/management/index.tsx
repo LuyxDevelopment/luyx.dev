@@ -13,13 +13,13 @@ import { authOptions } from '../../api/auth/[...nextauth]';
 const pages: { name: string, url: string, svg: string; }[] = [
 	{
 		name: 'Users',
-		url: '/admin/users',
+		url: '/admin/management/users',
 		svg: '/assets/images/users.svg',
 	},
 	{
 		name: 'System',
-		svg: '/assets/images/management.svg',
 		url: '/admin/management',
+		svg: '/assets/images/management.svg',
 	},
 ];
 
