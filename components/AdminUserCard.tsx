@@ -3,13 +3,12 @@ import Image from 'next/image.js';
 import Link from 'next/link';
 import { FC } from 'react';
 
-
 const AdminUserCard: FC<{ user: APIUser; }> = ({ user }) => {
 
 	return (
 		<Link
 			legacyBehavior
-			href={`${'http://127.0.0.1:3001'}/admin/management/users/${user._id}`}>
+			href={`${'http://127.0.0.1:3000'}/admin/management/users/${user._id}`}>
 			<div className='group bg-gray-200 p-4 rounded-lg shadow-md hover:scale-[1.04] transiton-all duration-[400ms] ease-in-out relative cursor-pointer'>
 				<Image
 					alt={user.alias}
