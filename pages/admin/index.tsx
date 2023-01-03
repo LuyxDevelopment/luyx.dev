@@ -79,7 +79,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 	}
 
 	// @ts-ignore
-	if (!(Object.values(githubUsers).map(e => e.id)).includes(parseInt(session.user?.sub))) {
+	if (!(githubUsers.map(e => e.gitHubId)).includes(parseInt(session.user?.sub))) {
 		return {
 			redirect: {
 				destination: '/unauthorized',

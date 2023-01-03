@@ -1,7 +1,6 @@
 import { APIProject, BaseAuthRouteOptions } from 'luyx-management-api-types/v1';
 import { GetServerSidePropsContext, NextPage, Redirect } from 'next';
 import { DefaultSession, unstable_getServerSession } from 'next-auth';
-import { useSession } from 'next-auth/react';
 
 import AdminProjectCard from '../../../components/AdminProjectCard';
 import Layout from '../../../components/Layout';
@@ -69,7 +68,7 @@ export const getServerSideProps = async ({
 	}
 
 	// @ts-ignore
-	if (!(Object.values(githubUsers).map(e => e.id)).includes(parseInt(session.user?.sub))) {
+	if (!(githubUsers.map(e => e.gitHubId)).includes(parseInt(session.user?.sub))) {
 		return {
 			redirect: {
 				destination: '/unauthorized',

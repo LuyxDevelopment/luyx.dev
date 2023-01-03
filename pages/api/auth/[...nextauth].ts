@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
 			return session;
 		},
 		signIn({ profile }) {
-			if (!(Object.values(githubUsers).map(e => e.id)).includes((profile as GithubProfile).id)) {
+			if (!(githubUsers.map(e => e.gitHubId)).includes((profile as GithubProfile).id)) {
 				return false;
 			}
 
