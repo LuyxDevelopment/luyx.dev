@@ -22,8 +22,8 @@ const UserCard: FC<Props> = ({ user }) => {
 						width={256}
 					/>
 					<div className='w-full'>
-						<p className='text-xl text-ellipsis title'>{user.alias}</p>
-						<p className='text-sm text-ellipsis mb-4'>{user.position}</p>
+						<p className='text-2xl text-ellipsis title font-bold'>{user.alias}</p>
+						<p className='text-s text-ellipsis font-bold'>{user.position}</p>
 						<p>{user.info.countryCode}</p>
 					</div>
 				</div>

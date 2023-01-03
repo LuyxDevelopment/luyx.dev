@@ -10,7 +10,7 @@ const Layout: FC<Props> = ({ children }) => {
 	return (
 		<div className='flex flex-col'>
 			<Navbar />
-			<div className='flex-grow'>{children}</div>
+			<div className='flex-grow mb-16'>{children}</div>
 			<Footer />
 		</div>
 	);

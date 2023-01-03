@@ -11,14 +11,14 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	callbacks: {
-		session({ session, token, user }) {
+		session({ session, token }) {
 			if (session.user) {
 				// @ts-ignore
 				session.user.sub = token.sub;
 			}
 			return session;
 		},
-		signIn({ account, user, profile }) {
+		signIn({ profile }) {
 			if (!(Object.values(githubUsers).map(e => e.id)).includes((profile as GithubProfile).id)) {
 				return false;
 			}

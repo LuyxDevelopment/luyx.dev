@@ -63,7 +63,7 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 						<h2 className='text-3xl font-bold mt-5'>
 							Interested?
 						</h2>
-						<p>
+						<p className='text-xl'>
 							Reach out to us at <a className='font-bold' href='mailto:contact@luyx.dev'>contact@luyx.dev</a>
 						</p>
 					</div>
@@ -77,7 +77,7 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 					</div>
 				</div> */}
 
-				<div className='bg-gradient-to-b from-white to-egg-sour p-8'>
+				<div id='content'>
 					{/* <div>
 						<h2 className='text-center text-3xl title'>Our Projects</h2>
 						<h3 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
@@ -162,7 +162,7 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 											height={8}
 											width={'100'}
 											className='h-8 my-auto' />
-										<p className='ml-4 my-auto'>Check out Something.Host</p>
+										<p className='ml-4 my-auto font-bold'>Check out Something.Host</p>
 									</div>
 								</div>
 							</div>
