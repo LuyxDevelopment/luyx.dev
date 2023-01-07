@@ -3,16 +3,20 @@ import { NextPage, NextPageContext } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import ProjectCard from '../components/ProjectCard';
+// import ProjectCard from '../components/ProjectCard';
 import UserCard from '../components/UserCard';
 import { useMetaData } from '../lib/hooks/useMetaData';
+import Twemoji from 'react-twemoji';
 
 interface Props {
 	users: APIUser[];
 	projects: APIProject[];
 }
 
-const Home: NextPage<Props> = ({ users, projects }) => {
+const Home: NextPage<Props> = ({
+	users,
+	// projects
+}) => {
 	return (
 		<>
 			{useMetaData('Home', 'Luyx Home Page', '/')}
@@ -49,6 +53,7 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 							<div className='mb-2'>
 								<Link
 									href={'https://skillicons.dev'}>
+									{/* eslint-disable-next-line @next/next/no-img-element */}
 									<img
 										alt='Skill Icons'
 										src={'https://skillicons.dev/icons?i=nodejs,ts,java,py,html,react,git,mongodb,mysql,nginx,docker,gcp,&theme=light'}
@@ -132,15 +137,21 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 						<h3 className='max-w-4xl text-xl mt-2 mx-auto text-center'>
 							Spanning multiple countries and timezones, we can get it done.
 						</h3>
-						<div className='max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8'>
-							{
-								users.map((u, i) => {
-									return (
-										<UserCard user={u} key={i} />
-									);
-								})
-							}
-						</div>
+						<Twemoji
+							options={{ className: 'country-emoji' }}
+						>
+							<div
+								className='max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8'
+							>
+								{
+									users.map((u, i) => {
+										return (
+											<UserCard user={u} key={i} />
+										);
+									})
+								}
+							</div>
+						</Twemoji>
 					</div>
 
 					<h2 className='text-center text-3xl title mt-8'>Our Hosting</h2>
@@ -169,7 +180,7 @@ const Home: NextPage<Props> = ({ users, projects }) => {
 						</Link>
 					</div>
 				</div>
-			</Layout>
+			</Layout >
 		</>);
 };
 
