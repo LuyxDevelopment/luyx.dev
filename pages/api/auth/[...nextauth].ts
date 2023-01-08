@@ -6,8 +6,8 @@ export const authOptions: NextAuthOptions = {
 	secret: process.env.NEXTAUTH_SECRET,
 	providers: [
 		GithubProvider({
-			clientId: process.env.GITHUB_CLIENT_ID,
-			clientSecret: process.env.GITHUB_SECRET,
+			clientId: process.env.GH_CLIENT_ID,
+			clientSecret: process.env.GH_SECRET,
 		}),
 	],
 	callbacks: {
