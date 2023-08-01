@@ -1,43 +1,36 @@
 {
 	"name": "luyx-website",
-	"version": "0.1.0",
-	"author": {
-		"name": "Luyx Development",
-		"email": "contact@luyx.dev",
-		"url": "https://luyx.dev"
-	},
-	"type": "module",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "npx next dev -p 3000 -H 127.0.0.1",
-		"build": "npx next build",
-		"start": "npx next start -p 3000 -H 127.0.0.1",
-		"lint": "npx next lint"
-	},
-	"dependencies": {
-		"eslint-config-next": "13.0.4",
-		"framer-motion": "^8.0.2",
-		"luyx-management-api-types": "github:LuyxDevelopment/luyx-management-api-types",
-		"next": "^13.1.1",
-		"next-auth": "^4.18.7",
-		"next-themes": "^0.2.1",
-		"react": "^18.2.0",
-		"react-dom": "18.2.0",
-		"react-parallax-tilt": "^1.7.79",
-		"react-spinners": "^0.13.6",
-		"react-twemoji": "^0.5.0"
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "npm run test:integration && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write .",
+		"test:integration": "playwright test",
+		"test:unit": "vitest"
 	},
 	"devDependencies": {
-		"@types/node": "^18.11.18",
-		"@types/react": "^18.0.26",
-		"@types/react-dom": "^18.0.10",
-		"@types/react-twemoji": "^0.4.0",
-		"@typescript-eslint/eslint-plugin": "^5.44.0",
-		"@typescript-eslint/parser": "^5.44.0",
-		"autoprefixer": "^10.4.13",
+		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.20.4",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
 		"eslint": "^8.28.0",
-		"postcss": "^8.4.20",
-		"tailwindcss": "^3.2.4",
-		"typescript": "^4.9.4"
-	}
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.10.1",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.3",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2",
+		"vitest": "^0.32.2"
+	},
+	"type": "module"
 }
