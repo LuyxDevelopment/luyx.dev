@@ -4,8 +4,7 @@
 
 	const pages: { name: string; url: string }[] = [
 		{ name: 'home', url: '' },
-		{ name: 'hobbies', url: 'hobbies' },
-		{ name: 'programming', url: 'programming' }
+		{ name: 'legal', url: 'legal' }
 	];
 </script>
 
@@ -13,7 +12,8 @@
 	class="print:hidden flex space-x-6 font-light text-center text-2xl justify-center items-center h-20"
 >
 	{#each pages as { name, url }, i}
-		<a class="text-[#F25922] hover:text-cyan-400 duration-300" href="{base}/{url}">{name}</a>{/each}
+		<a class="text-orange-500 hover:text-cyan-400 duration-300" href="{base}/{url}">{name}</a
+		>{/each}
 </nav>
 
 <slot />

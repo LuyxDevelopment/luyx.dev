@@ -1,8 +1,11 @@
-<div class="px-64 py-32 mx-auto">
-	<p class="text-6xl font-bold">Legal</p>
-	<div class="flex flex-col gap-2">
-		<p>Luyx LLC</p>
-		<a href="/legal/privacy">Privacy Policy</a>
-        <a href="/legal/tos">Terms of Service</a>
-    </div>
+<div class="text-center">
+	<h1 class="text-5xl">Legal</h1>
+	<div class="w-1/2 mx-auto grid grid-cols-2 text-2xl">
+		<div>
+			<a href="/legal/privacy">Privacy Policy</a>
+		</div>
+		<div>
+			<a href="/legal/terms">Terms of Service</a>
+		</div>
+	</div>
 </div>
