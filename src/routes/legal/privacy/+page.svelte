@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="px-64 py-4 print:px-32">
+<div class="mx-64 py-4 print:mx-20">
 	<p class="print:hidden">A printable version is available</p>
 	<h1 class="text-xl print:font-normal w-screen">
 		Privacy Policy of <span class="screen:font-bold">Luyx.dev, Count.bot, Treefarmer.xyz</span>
@@ -444,7 +444,7 @@
 				</li>
 				<li class="text-lg my-3">The payment processors we work with are:</li>
 				<li class="text-lg my-3">
-					<span class="font-bold">PayPal or Braintree:</span>
+					<span class="font-bold">PayPal:</span>
 					<br />
 					Their Privacy Policy can be viewed at https://www.paypal.com/webapps/mpp/ua/privacy-full
 				</li>

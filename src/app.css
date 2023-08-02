@@ -24,6 +24,18 @@ body {
     list-style-position: inside;
 }
 
+.bracketed-ol {
+	list-style-type: none;
+}
+
+.bracketed-li:before {
+	content: "(" counter(section, lower-alpha) ") ";
+}
+
+.bracketed-li {
+	counter-increment: section;
+}
+
 .list-roman {
     list-style: lower-roman;
     list-style-position: inside;
