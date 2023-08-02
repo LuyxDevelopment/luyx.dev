@@ -39,7 +39,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"luyx-management-api-types": "github:LuyxDevelopment/luyx-management-api-types",
 		"pdfjs-dist": "^3.9.179",
+		"react-twemoji": "^0.5.0",
 		"svelte-pdf": "^1.0.20"
 	}
 }
