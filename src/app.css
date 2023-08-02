@@ -1,7 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background: #1C1917 !important;
+  background: #fff !important;
+  font-family: 'Titles', ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+}
+
+.container {
+	padding-top: 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.list-lettered {
+    list-style: lower-latin;
+    list-style-position: inside;
 }

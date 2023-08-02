@@ -2,7 +2,12 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+                'print': { 'raw': 'print' },
+				'screen': { 'raw': 'screen' },
+            }
+		},
 		screens: {
 			'iphonexr': '414px',
 			// => @media (min-width: 414px) { ... }
