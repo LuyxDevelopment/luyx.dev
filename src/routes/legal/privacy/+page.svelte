@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="px-64 py-4 print:px-32 w-2/3">
+<div class="px-64 py-4 print:px-32">
 	<p class="print:hidden">A printable version is available</p>
 	<h1 class="text-xl print:font-normal w-screen">
 		Privacy Policy of <span class="screen:font-bold">Luyx.dev, Count.bot, Treefarmer.xyz</span>
