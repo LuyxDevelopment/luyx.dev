@@ -1,4 +1,4 @@
-<div class="mx-12 md:mx-32 lg:mx-64 py-4 print:mx-20">
+<div class="mx-16 sm:mx-32 lg:mx-64 py-4 print:mx-20">
 	<p class="print:hidden">A printable version is available</p>
 	<h1 class="text-xl print:font-normal w-screen">
 		Terms of Service of <span class="screen:font-bold"
