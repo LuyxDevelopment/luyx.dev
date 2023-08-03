@@ -1,14 +1,34 @@
 <script lang="ts">
-	import type { APIProject, APIUser, BaseAuthRouteOptions } from 'luyx-management-api-types/v1';
-	import TeamCard from '../lib/TeamCard.svelte';
-	import type { PageData } from './$types.js';
+	import Contact from "../lib/Contact.svelte";
+	import TeamCard from "../lib/TeamCard.svelte";
+	import type { PageData } from "./$types.js";
 
 	export let data: PageData;
+
+	const contacts: {
+		src: string;
+		title: string;
+		description: string;
+		href: string;
+	}[] = [
+		{
+			description: "Our community support server",
+			href: "https://discord.gg/jRUWbXhCYN",
+			src: "https://avatars.githubusercontent.com/u/96552233",
+			title: "Discord",
+		},
+		{
+			description: "The home for our source code",
+			href: "https://github.com/LuyxDevelopment",
+			src: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+			title: "GitHub",
+		},
+	];
 </script>
 
 <div>
 	<div class="w-1/2 mx-auto text-orange-500 font-thin text-5xl">
-		<h1>Hello, we are Luyx</h1>
+		<h1><span class="wave">👋</span>Hello, we are Luyx</h1>
 	</div>
 	<div class="w-1/2 mx-auto">
 		<a
@@ -19,20 +39,35 @@
 			/>
 		</a>
 	</div>
-
 	<div>
-		<h2 class="text-center text-3xl title mt-8 cursor-pointer">Our Team</h2>
+		<h2 class="text-center text-4xl title mt-8 cursor-pointer">Our Team</h2>
 		<h3 class="max-w-4xl text-xl mt-2 mx-auto text-center">
 			Spanning multiple countries and timezones, we can get it done.
 		</h3>
-		<!-- <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8">
-			{#if data.users}
-				{#each data.users as user}
+		<div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 mt-8">
+			{#if data.users.data}
+				{#each data.users.data as user}
 					<TeamCard {user} />
 				{/each}
 			{:else}
 				<p>Loading users</p>
 			{/if}
-		</div> -->
+		</div>
+	</div>
+	<div>
+		<h2 class="text-center text-4xl title mt-8 cursor-pointer">Contact</h2>
+		<h3 class="max-w-4xl text-xl mt-2 mx-auto text-center">
+			Reach out to us at any time 😊
+		</h3>
+		<div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-8 mt-8">
+			{#each contacts as contact}
+				<Contact
+					description={contact.description}
+					href={contact.href}
+					src={contact.src}
+					title={contact.title}
+				/>
+			{/each}
+		</div>
 	</div>
 </div>
