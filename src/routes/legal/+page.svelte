@@ -1,5 +1,5 @@
 <div class="px-64 py-16 flex flex-col">
-	<h1 class="text-5xl font-bold text-orange-500">Legal</h1>
+	<h1 class="text-5xl font-bold text-orange-500 my-2">Legal</h1>
 	<div class="flex flex-col">
 		<p class="text-lg font-bold">Luyx LLC</p>
 		<p>Email address:</p>
