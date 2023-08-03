@@ -4,6 +4,7 @@
 name: Luyx Website Deployment
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
 
