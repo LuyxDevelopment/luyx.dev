@@ -200,8 +200,11 @@
 			Refunds
 			<ul>
 				<li class="text-lg mt-2 my-3">
-					We issue refunds for Contracts within seven (7) days of the original
-					purchase of the Contract.
+					A refund may be requested by emailing us at contact@luyx.dev. Requests
+					for refunds are only subject to review within the first seven days of
+					an invoiced service. If a refund request is submitted within the seven
+					days, we will review it and reply to your email in a timely manor. We
+					reserve the right to reject refunds and will provide reason for doing so.
 				</li>
 			</ul>
 		</li>
