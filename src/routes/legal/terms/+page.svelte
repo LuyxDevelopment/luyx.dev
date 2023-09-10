@@ -200,11 +200,12 @@
 			Refunds
 			<ul>
 				<li class="text-lg mt-2 my-3">
-					A refund may be requested by emailing us at contact@luyx.dev. Requests
-					for refunds are only subject to review within the first seven days of
-					an invoiced service. If a refund request is submitted within the seven
-					days, we will review it and reply to your email in a timely manor. We
-					reserve the right to reject refunds and will provide reason for doing so.
+					Our project CountBot offers a premium subscription called CountBot
+					Plus. After purchasing, customers are eligible to receive a refund
+					within the first seven days of the most recent invoice that was
+					billed. You may request a refund by emailing us at contact@luyx.dev.
+					We reserve the right to deny a refund request, even if it is within
+					the seven day period.
 				</li>
 			</ul>
 		</li>
