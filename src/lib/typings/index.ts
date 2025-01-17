@@ -6,6 +6,5 @@ export interface LuyxUser {
 }
 
 export interface MetadataOptions {
-  title: string;
   url: string;
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
   import Contact from '../lib/components/Contact.svelte';
+  import Metadata from '../lib/components/Metadata.svelte';
   import TeamCard from '../lib/components/TeamCard.svelte';
   import type { LuyxUser } from '../lib/typings/index.js';
 
@@ -44,6 +45,10 @@
     },
   ];
 </script>
+
+<svelte:head>
+  <Metadata url="/" />
+</svelte:head>
 
 <div class="my-10">
   <div class="mx-auto flex w-1/2 flex-col space-y-5">
