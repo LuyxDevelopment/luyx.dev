@@ -4,20 +4,20 @@
   let { url }: MetadataOptions = $props();
 </script>
 
-<title>Luyx LLC | </title>
+<title>Luyx LLC</title>
 <meta charSet="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta
   name="description"
   content="For more than at least, like, a few days, Luyx LLC has been driven by fair value and giving back."
 />
+<meta name="keywords" content="luyx,company" />
 <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
 <meta property="og:title" content="Luyx LLC" />
 <meta
   property="og:description"
   content="For more than at least, like, a few days, Luyx LLC has been driven by fair value and giving back."
 />
-<meta property="og:site_name" content="Jaren Goldberg" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://luyx.dev/{url}" />
 <meta property="og:image" content="https://luyx.dev/luyx.png" />
