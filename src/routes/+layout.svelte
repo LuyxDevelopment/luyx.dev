@@ -13,7 +13,7 @@
 <nav
   class="mx-5 my-5 flex flex-row items-center justify-center space-x-10 text-center text-xl font-extralight sm:text-2xl md:text-3xl lg:text-4xl"
 >
-  {#each pages as { name, url }, i}
+  {#each pages as { name, url }}
     <a class="text-orange-500 duration-300 hover:text-orange-600" href="{base}/{url}">{name}</a
     >{/each}
 </nav>
